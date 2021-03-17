@@ -1,31 +1,83 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { PageArea } from './styled';
-import { PageContainer, PageTitle } from '../../GlobalStyle';
+import { ErrorMessage, PageContainer, PageTitle } from '../../GlobalStyle';
+import useApi from '../../helpers/Api';
+import { doLogin } from '../../helpers/AuthHandler';
 
 const Login = () => {
+  const api = useApi();
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [rememberPass, setRememberPass] = useState(false);
+  const [error, setError] = useState('');
+  const [disabled, setDisabled] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setDisabled(true);
+
+    const json = await api.login(email, password);
+
+    if (json.error) {
+        setError(json.error);
+    } else {
+      doLogin(json.token, rememberPass);
+      setDisabled(false);
+      window.location.href = '/';
+    }
+  };
+
   return (
-    <PageContainer>
+    <PageContainer className="animeLeft">
       <PageTitle>Login</PageTitle>
       <PageArea>
-        <form>
+        <form onSubmit={handleSubmit}>
+          {error && <ErrorMessage>{error}</ErrorMessage>}
+
           <label className="area">
             <div className="area-title">E-mail</div>
             <div className="area-input">
-              <input type="email" />
+              <input
+                type="email"
+                value={email}
+                disabled={disabled}
+                onChange={({ target }) => setEmail(target.value)}
+                placeholder="exemplo@exemplo.com"
+                required
+              />
             </div>
           </label>
+
           <label className="area">
             <div className="area-title">Senha</div>
             <div className="area-input">
-              <input type="password" />
+              <input
+                type="password"
+                value={password}
+                disabled={disabled}
+                onChange={({ target }) => setPassword(target.value)}
+                placeholder="******"
+                required
+              />
             </div>
           </label>
+
           <label className="area">
             <div className="area-title">Lembrar senha</div>
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              checked={rememberPass}
+              disabled={disabled}
+              onChange={() => setRememberPass(!rememberPass)}
+            />
           </label>
 
-          <button>Logar</button>
+          {disabled ? (
+            <button disabled={disabled}>Entrando...</button>
+          ) : (
+            <button>Entrar</button>
+          )}
         </form>
       </PageArea>
     </PageContainer>

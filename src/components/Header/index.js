@@ -2,10 +2,11 @@ import React from 'react';
 import { HeaderArea } from './styled';
 import { NavLink, Link } from 'react-router-dom';
 
-import { isLogged } from '../../helpers/AuthHandler';
+import { isLogged,logout } from '../../helpers/AuthHandler';
 
 const Header = () => {
   const logged = isLogged();
+
 
   return (
     <HeaderArea>
@@ -37,7 +38,7 @@ const Header = () => {
                   <NavLink to="/my-account">Minha conta</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/login" >
+                  <NavLink to="" >
                     Sair
                   </NavLink>
                 </li>

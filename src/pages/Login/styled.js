@@ -1,18 +1,19 @@
 import styled from 'styled-components';
 
 export const PageArea = styled.div`
-  height: 80vh;
+  height: 70vh;
+  
   form {
+    max-width: 600px;
     width: 100%;
     margin: 0 auto;
     background-color: #fff;
     border-radius: 3px;
     padding: 10px;
     box-shadow: 0 0 3px #2c3e50;
-    max-width: 600px;
 
     button{
-      padding: 10px 15px;
+      padding: 10px 25px;
       background-color: #3498db;
       color: #fff;
       font-weight: 700;
@@ -20,11 +21,17 @@ export const PageArea = styled.div`
       font-size: 1rem;
       transition: all ease .4s;
       display: inline-block;
-      margin-left: 90px;
+      position:relative;
+      left: 50%;
+      transform: translate(-50%);
 
       &:hover{
         background-color: #2980b9;
         color:#ccc;
+      }
+      &:disabled{
+        opacity: .5;
+        cursor: wait;
       }
     }
 
