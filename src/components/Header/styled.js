@@ -17,9 +17,9 @@ export const HeaderArea = styled.section`
       align-items: center;
 
       a {
-        font-size: 24px;
+        font-size: 1.4rem;
         font-weight: 600;
-        color: #555;
+        color: #2c3e50;
         transition: all 0.4s;
 
         &:hover {
@@ -28,18 +28,37 @@ export const HeaderArea = styled.section`
       }
     }
 
-    nav ul {
-      display: flex;
-      align-items: center;
-      height: 60px;
-
+    nav {
+      padding-bottom: 10px;
+      padding-top: 10px;
+      ul {
+        display: flex;
+        align-items: center;
+        height: 40px;
+      }
       li {
         list-style: none;
-        margin-right: 15px;
+        margin: 0 20px;
 
         a {
-          color: #555;
+          font-size: 1rem;
+          color: #2c3e50;
           font-weight: 500;
+          transition: all ease 0.4s;
+
+          &:hover {
+            color: #7f8c8d;
+          }
+          &.btn {
+            background-color: #f39c12;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 10px;
+          }
+          &.btn:hover {
+            background-color: #d35400;
+            color: #ddd;
+          }
         }
       }
     }

@@ -2,7 +2,11 @@ import React from 'react';
 import { HeaderArea } from './styled';
 import { NavLink, Link } from 'react-router-dom';
 
+import { isLogged } from '../../helpers/AuthHandler';
+
 const Header = () => {
+  const logged = isLogged();
+
   return (
     <HeaderArea>
       <div className="container">
@@ -12,12 +16,38 @@ const Header = () => {
 
         <nav className="menu">
           <ul>
-            <li>
-              <NavLink to="/login">Login</NavLink>
-            </li>
-            <li>
-              <NavLink to="/cadastro">Cadastre-se</NavLink>
-            </li>
+            {!logged && (
+              <>
+                <li>
+                  <NavLink to="/login">Login</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/cadastro">Cadastre-se</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/login" className="btn">
+                    Poste um anúncio
+                  </NavLink>
+                </li>
+              </>
+            )}
+            {logged && (
+              <>
+                <li>
+                  <NavLink to="/my-account">Minha conta</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/login" >
+                    Sair
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/post-an-ad" className="btn">
+                    Poste um anúncio
+                  </NavLink>
+                </li>
+              </>
+            )}
           </ul>
         </nav>
       </div>

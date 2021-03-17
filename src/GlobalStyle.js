@@ -7,7 +7,7 @@ export default createGlobalStyle`
   margin:0;
   padding: 0;
   box-sizing:border-box;
-  outline:none;
+  outline:0;
 }
 html, body, #root{
   min-height: 100%;
@@ -26,6 +26,17 @@ a{
 `;
 
 export const Template = styled.div``;
-export const PageContainer = styled.div``;
-export const PageTitle = styled.h1``;
+
+export const PageContainer = styled.div`
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 0;
+`;
+
+export const PageTitle = styled.h1`
+  font-size: 2.3rem;
+  text-align: center;
+  padding: 10px 0;
+`;
+
 export const PageBody = styled.div``;

@@ -1,3 +1,5 @@
+import Cookies from 'js-cookie';
+
 const initialState = {
   token: '',
   user: {},
@@ -6,7 +8,7 @@ const initialState = {
 export default (state = initialState, action = {}) => {
   switch (action.type) {
     case 'setToken':
-      localStorage.setItem('token', action.payload.token);
+      Cookies.set('token', action.payload.token);
       return { ...state, token: action.payload.token };
       break;
     case 'setUser':
