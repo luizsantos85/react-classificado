@@ -4,13 +4,13 @@
 
 ## Sobre 📕
 
-Projeto desenvolvido no curso de React da B7web
+Projeto desenvolvido no curso de React da B7web, nesse projeto utilizamos a integração de API's, Hooks, eu utilizei o ContextApi, (reforço do estudo), para fazer a parte de gerenciamento de estado. Na parte de estilização foi implementada com styled components.
 
 ---
 
 ## Descrição :book:
 
-Sistema de classificados criado no curso da B7web.
+Sistema de classificados criado com REACT, no curso da B7web.
 
 ---
 
@@ -19,7 +19,7 @@ Sistema de classificados criado no curso da B7web.
 As tecnologias utilizadas foram:
 
 - [React](https://reactjs.org/)
-- [Styled-Components] (https://styled-components.com/)
+- [Styled-Components](https://styled-components.com/)
 - [Node](https://nodejs.org/en/)
 
 ---
@@ -29,7 +29,7 @@ As tecnologias utilizadas foram:
 No seu terminal, rode os comandos abaixo:
 
 ```bash
-$ git clone https://github.com/luizsantos85/classificados-react.git
+$ git clone https://github.com/luizsantos85/react-classificado.git
 $ cd front-end
 ```
 
@@ -57,3 +57,10 @@ Window
 1423×615
 1431×797
 ×
+
+---
+
+## A implementar 👷
+
+- Backend
+  Estudando a parte de backend para desenvolver com PHP/Laravel.
