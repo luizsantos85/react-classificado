@@ -13,7 +13,6 @@ export const doLogin = (token, rememberPass = false) => {
   }
 };
 
-export const logout = () => {
+export const doLogout = () => {
   Cookies.remove('token');
-  window.location.href="/"
 };

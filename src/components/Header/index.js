@@ -2,11 +2,15 @@ import React from 'react';
 import { HeaderArea } from './styled';
 import { NavLink, Link } from 'react-router-dom';
 
-import { isLogged,logout } from '../../helpers/AuthHandler';
+import { isLogged, doLogout } from '../../helpers/AuthHandler';
 
 const Header = () => {
   const logged = isLogged();
 
+  const handleLogout = () => {
+    doLogout();
+    window.location.href = '/';
+  };
 
   return (
     <HeaderArea>
@@ -38,9 +42,9 @@ const Header = () => {
                   <NavLink to="/my-account">Minha conta</NavLink>
                 </li>
                 <li>
-                  <NavLink to="" >
+                  <div className="btn-logout" onClick={handleLogout}>
                     Sair
-                  </NavLink>
+                  </div>
                 </li>
                 <li>
                   <NavLink to="/post-an-ad" className="btn">

@@ -40,11 +40,12 @@ export const HeaderArea = styled.section`
         list-style: none;
         margin: 0 20px;
 
-        a {
+        a, .btn-logout {
           font-size: 1rem;
           color: #2c3e50;
           font-weight: 500;
           transition: all ease 0.4s;
+          cursor:pointer;
 
           &:hover {
             color: #7f8c8d;
