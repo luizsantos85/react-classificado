@@ -62,5 +62,4 @@ Window
 
 ## A implementar 👷
 
-- Backend
-  Estudando a parte de backend para desenvolver com PHP/Laravel.
+- Estudando a parte de backend para desenvolver com PHP/Laravel.

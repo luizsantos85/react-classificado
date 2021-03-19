@@ -48,6 +48,10 @@ const Api = {
     const json = await apiFetchPost('/user/signin', { email, password });
     return json;
   },
+  getEstado: async() => {
+    const json = await apiFetchGet('/states');
+    return json.states;
+  },
 };
 
 export default () => Api;
