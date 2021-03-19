@@ -4,9 +4,9 @@ import qs from 'qs';
 const baseUrl = 'http://alunos.b7web.com.br:501';
 
 const apiFetchPost = async (endpoint, body) => {
-  if(!body.token){
+  if (!body.token) {
     let token = Cookies.get('token');
-    if(token){
+    if (token) {
       body.token = token;
     }
   }
@@ -27,13 +27,13 @@ const apiFetchPost = async (endpoint, body) => {
 };
 
 const apiFetchGet = async (endpoint, body = []) => {
-  if(!body.token){
+  if (!body.token) {
     let token = Cookies.get('token');
-    if(token){
+    if (token) {
       body.token = token;
     }
   }
-  const res = await fetch(`${baseUrl+endpoint}?${qs.stringify(body)}`);
+  const res = await fetch(`${baseUrl + endpoint}?${qs.stringify(body)}`);
   const json = await res.json();
   if (json.notallowed) {
     window.location.href = '/login';
@@ -42,15 +42,23 @@ const apiFetchGet = async (endpoint, body = []) => {
   return json;
 };
 
-
 const Api = {
   login: async (email, password) => {
     const json = await apiFetchPost('/user/signin', { email, password });
     return json;
   },
-  getEstado: async() => {
+  getEstado: async () => {
     const json = await apiFetchGet('/states');
     return json.states;
+  },
+  register: async (name, email, password, estado) => {
+    const json = await apiFetchPost('/user/signup', {
+      name,
+      email,
+      password,
+      state: estado,
+    });
+    return json;
   },
 };
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { PageArea } from './styled';
 import { ErrorMessage, PageContainer, PageTitle } from '../../GlobalStyle';
 import useApi from '../../helpers/Api';
-import {} from '../../helpers/AuthHandler';
+import { doLogin } from '../../helpers/AuthHandler';
 
 const Cadastro = () => {
   const api = useApi();
@@ -27,13 +27,19 @@ const Cadastro = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setDisabled(true);
-    // const json = await api.register(email, password);
-    // if (json.error) {
-    //   setError(json.error);
-    // } else {
-    //   doLogin(json.token);
-    //   window.location.href = '/';
-    // }
+    setError('');
+    if (password !== confirmPass) {
+      setError('Senhas não conferem.');
+      setDisabled(false);
+      return;
+    }
+    const json = await api.register(name, email, password, estado);
+    if (json.error) {
+      setError(json.error);
+    } else {
+      doLogin(json.token);
+      window.location.href = '/';
+    }
     setDisabled(false);
   };
 
@@ -68,7 +74,9 @@ const Cadastro = () => {
               >
                 <option value="" disabled></option>
                 {estadoList.map((item) => (
-                  <option value={item._id} key={item._id}>{item.name}</option>
+                  <option value={item._id} key={item._id}>
+                    {item.name}
+                  </option>
                 ))}
               </select>
             </div>
