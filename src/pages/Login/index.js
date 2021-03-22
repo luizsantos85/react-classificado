@@ -29,8 +29,8 @@ const Login = () => {
 
   return (
     <PageContainer className="animeLeft">
-      <PageTitle>Login</PageTitle>
       <PageArea>
+      <PageTitle>Login</PageTitle>
         <form onSubmit={handleSubmit}>
           {error && <ErrorMessage>{error}</ErrorMessage>}
 

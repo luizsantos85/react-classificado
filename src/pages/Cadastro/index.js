@@ -45,8 +45,8 @@ const Cadastro = () => {
 
   return (
     <PageContainer className="animeLeft">
-      <PageTitle>Cadastro</PageTitle>
       <PageArea>
+        <PageTitle>Cadastro</PageTitle>
         <form onSubmit={handleSubmit}>
           {error && <ErrorMessage>{error}</ErrorMessage>}
 

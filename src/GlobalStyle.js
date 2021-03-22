@@ -49,7 +49,7 @@ export const PageBody = styled.div``;
 export const PageContainer = styled.div`
   max-width: 1000px;
   margin: auto;
-  padding: 40px 0;
+  padding: 10px 0;
 `;
 
 export const PageTitle = styled.h1`
