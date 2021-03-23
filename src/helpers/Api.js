@@ -47,10 +47,7 @@ const Api = {
     const json = await apiFetchPost('/user/signin', { email, password });
     return json;
   },
-  getEstado: async () => {
-    const json = await apiFetchGet('/states');
-    return json.states;
-  },
+
   register: async (name, email, password, estado) => {
     const json = await apiFetchPost('/user/signup', {
       name,
@@ -60,6 +57,15 @@ const Api = {
     });
     return json;
   },
+
+  getEstado: async () => {
+    const json = await apiFetchGet('/states');
+    return json.states;
+  },
+  getCategories: async() =>{
+    const json = await apiFetchGet('/categories');
+    return json.categories;
+  }
 };
 
 export default () => Api;
