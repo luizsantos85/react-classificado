@@ -1,7 +1,20 @@
 import styled from 'styled-components';
 
 export const PageArea = styled.div`
-  height: 80vh;
+  min-height: 80vh;
+
+  .list{
+    display:flex;
+    flex-wrap:wrap;
+    
+  }
+  .seeAllLink{
+    display: inline-block;
+    font-weight:600;
+    margin: 10px 0;
+    color:#555;
+  }
+
 `;
 
 export const SearchArea = styled.div`

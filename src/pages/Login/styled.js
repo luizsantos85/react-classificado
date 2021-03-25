@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const PageArea = styled.div`
-  height: 80vh;
+  min-height: 80vh;
   margin-top: 40px;
   
   form {
