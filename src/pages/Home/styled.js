@@ -3,18 +3,20 @@ import styled from 'styled-components';
 export const PageArea = styled.div`
   min-height: 80vh;
 
-  .list{
-    display:flex;
-    flex-wrap:wrap;
-    
-  }
-  .seeAllLink{
-    display: inline-block;
-    font-weight:600;
-    margin: 10px 0;
-    color:#555;
-  }
+  .list {
+    display: flex;
+    flex-wrap: wrap;
 
+    .aditem {
+      width: 25%;
+    }
+  }
+  .seeAllLink {
+    display: inline-block;
+    font-weight: 600;
+    margin: 10px 0;
+    color: #555;
+  }
 `;
 
 export const SearchArea = styled.div`
@@ -74,23 +76,22 @@ export const SearchArea = styled.div`
     .category-item {
       display: flex;
       width: 25%;
-      align-items:center;
-      justify-content:center;
-      height:50px;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
       margin-bottom: 10px;
-      transition: all ease .4s;
+      transition: all ease 0.4s;
       color: #555;
 
       img {
         width: 45px;
         height: 45px;
-        margin-right:10px;
+        margin-right: 10px;
       }
 
-      &:hover{
-        transform:scale(.9);
-        opacity: .7;
-
+      &:hover {
+        transform: scale(0.9);
+        opacity: 0.7;
       }
     }
   }
