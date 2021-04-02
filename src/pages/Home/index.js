@@ -78,7 +78,7 @@ const Home = () => {
         </PageContainer>
       </SearchArea>
 
-      <PageContainer className="animeLeft">
+      <PageContainer>
         <PageArea>
           <PageTitle>Anúncios Recentes</PageTitle>
           <div className="list">
@@ -86,10 +86,14 @@ const Home = () => {
               <AdItem key={item.id} data={item} />
             ))}
           </div>
-          <Link to="/ads" className="seeAllLink">Ver todos</Link>
-
-          <hr/>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium placeat facere earum cumque iste molestiae magnam quaerat eum quas cupiditate. Necessitatibus sed earum animi aliquid quod officiis dicta eos iste!
+          <Link to="/ads" className="seeAllLink">
+            Ver todos
+          </Link>
+          <hr />
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium
+          placeat facere earum cumque iste molestiae magnam quaerat eum quas
+          cupiditate. Necessitatibus sed earum animi aliquid quod officiis dicta
+          eos iste!
         </PageArea>
       </PageContainer>
     </>

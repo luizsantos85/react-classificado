@@ -5,11 +5,11 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Login from './pages/Login';
 import Cadastro from './pages/Cadastro';
+import AdPage from './pages/AdPage';
 
 export default () => {
   return (
     <Switch>
-
       <Route exact path="/">
         <Home />
       </Route>
@@ -22,10 +22,12 @@ export default () => {
       <Route exact path="/post-an-ad">
         <Cadastro />
       </Route>
+      <Route exact path="/ad/:id">
+        <AdPage />
+      </Route>
       <Route exact path="*">
         <NotFound />
       </Route>
-
     </Switch>
   );
 };

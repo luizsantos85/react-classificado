@@ -11,7 +11,7 @@ export const Item = styled.div`
     transition: all ease .4s;
 
     &:hover{
-    background-color:#ccc;
+    background-color:#fff;
     border: 1px solid #555;
     transform: scale(1.1);
     }
