@@ -4,7 +4,7 @@ export const Fake = styled.div`
   background-color: #ddd;
   border-radius: 5px;
   height: ${(props) => props.height || 20}px;
-  animation: animaFake 3s linear infinite;
+  animation: animaFake 2s linear infinite;
 
   @keyframes animaFake {
     0% {
