@@ -7,7 +7,7 @@ const AdItem = (props) => {
   if (props.data.priceNegotiable) {
     price = 'Preço negociável';
   } else {
-    price = parseInt(props.data.price).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
+    price = parseInt(props.data.price).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   }
   
   return (
