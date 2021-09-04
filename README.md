@@ -4,7 +4,7 @@
 
 ## Sobre 📕
 
-Projeto desenvolvido no curso de React da B7web, nesse projeto foi utilizado integração de API's, Hooks e o ContextApi (para reforço do estudo) e para fazer a parte de gerenciamento de estado. Na parte de estilização foi implementada com styled components.
+Projeto desenvolvido no curso de React da B7web, nesse projeto foi utilizado integração de API's, Hooks e o ContextApi (para reforço do estudo) para fazer a parte de gerenciamento de estado. Na parte de estilização foi implementada com styled components.
 
 ---
 
